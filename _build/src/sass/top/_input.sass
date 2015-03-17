@@ -1,0 +1,38 @@
+.wrapper
+  .input_container
+    position: fixed
+    +trbl(auto, 0, 0, 0)
+    height: 80px
+    background: #F3F3F3
+    z-index: index($zIndex, header)
+
+    .input
+      position: absolute
+      +trbl(0, auto, 0, 20px)
+      padding-left: 10px
+      width: 480px
+      height: 60px
+      line-height: 60px
+      margin: auto
+      background: #fff
+      border: 1px solid #ccc
+      border-radius: 5px
+      font-size: 28px
+      word-break: break-all
+
+    .submit
+      position: absolute
+      +trbl(0, 20px, 0, auto)
+      width: 100px
+      height: 60px
+      line-height: 60px
+      margin: auto
+      border-radius: 5px
+      background: #5588E3
+      text-align: center
+      font-size: 28px
+      color: #fff
+      opacity: 0.7
+
+      &.active
+        opacity: 1

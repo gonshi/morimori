@@ -1,0 +1,88 @@
+extends /layout/_application
+include /mixin/_custom
+block title
+  title #{meta.title}
+block body
+  div.wrapper
+    header.header
+      p.ttl 大関れいか
+      p.menu
+        button
+          img(src="img/common/menu.png" alt="MENU")
+
+    div.talk
+
+    div.input_container
+      p.input
+      p.submit
+        button 送信
+
+  div.tutorial_container
+    p.tutorial
+      img(src="img/common/tutorial.png" alt="送信ボタンを押すと会話を進めていけるよ")
+
+  // for memberList animation
+  div.filter
+
+  div.memberList_container
+    div.memberList
+      div.header
+        p.back
+          button
+            img(src="img/common/arrow.png" alt="<")
+        p.ttl メンバー
+      p.subttl メンバー5
+      table.category.talkMember
+        +member("morisuke", "もりすけ", "残念なイケメン", "https://twitter.com/Morisuke08", "https://vine.co/u/1026534303066361856")
+        +member("ind", "インドでぃん", "VINEってなに？", "https://twitter.com/indodeen", "https://vine.co/u/1028001895047892992")
+        +member("redjoker", "REDJOKER", '<img src="img/emoticon/1.png">ぶひぶひ', "https://twitter.com/Redjoker2418", "https://vine.co/RedJoker")
+        +member("reika", "大関れいか", "うるせーパイナップル", "https://twitter.com/xtxx_mhz", "https://vine.co/u/996673190115913728")
+        +member("brian", "ブライアン", "", "https://twitter.com/brianjesse1", "https://vine.co/u/965649447629500416")
+        +member("dream", "ほこりちゃん(ゆめ)", "", "https://twitter.com/hocori_", "https://vine.co/u/996475727874596864")
+      p.subttl 企画 
+      table.category.direction
+        +member("morisuke", "もりすけ", "残念なイケメン", "https://twitter.com/Morisuke08", "https://vine.co/u/1026534303066361856")
+      p.subttl エンジニア 
+      table.category.engineer
+        +member("gonshi", "ごんしまじた", "謹賀新年", "https://twitter.com/gonshi_com", "")
+      p.subttl イラストレーター(スタンプ) 
+      table.category.illustrator
+        +member("tenten", "村松てんてん", "", "https://twitter.com/tntn0226", "")
+
+  div.zoomPicture_container
+    p.zoomPicture
+      img(src="img/common/dummy.png" alt="画像")
+
+  div.profile_container
+    div.profile
+      p.cover
+        img(src="img/common/dummy.png" alt="カバー写真")
+      div.info
+        p.close
+          button ✕ 
+        p.icon
+          img(src="img/common/dummy.png" alt="プロフィール写真")
+        div.txt
+          p.name
+          p.comment
+      div.social
+        p.twitter
+          a(target="_blank")
+            img(src="img/common/twitter.png" alt="twitter")
+        p.vine
+          a(target="_blank")
+            img(src="img/common/vine.png" alt="vine")
+
+  div.loading_container
+    p.loading-img
+      img(src="img/stamp/40.png" alt="LOADING")
+    - var _length = "loading".length + 2 // +2 means dot * 2
+    - for ( var i = 0; i < _length; i++){
+        p.loading-txt(class="num#{ i }")
+    - }
+
+  div.secret_container
+    div.secret
+      input.password(type="text" value="Enter Password.")
+      p.enter
+        button ENTER

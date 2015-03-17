@@ -1,0 +1,9 @@
+mixin member(filename, name, comment, twitter, vine)
+  tr.member(class=filename data-name=name data-filename=filename data-twitter=twitter data-vine=vine)
+    td.icon
+      button
+        img(src="img/icon/#{filename}.jpg" alt="アイコン")
+    td.name
+      button #{name} 
+    td.comment
+      button!= comment

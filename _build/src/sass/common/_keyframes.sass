@@ -1,0 +1,43 @@
++keyframes(show)
+  0%
+    opacity: 0
+  100%
+    opacity: 1 
+
++keyframes(imgdance)
+  $deg: 15deg
+  $scale: 1.1
+  0%
+    +scale(0.97)
+  25%
+    +scale(0.9)
+  50%
+    +scale(1)
+  58%
+    +transform(scale(1.1) rotate(-$deg))
+  66%
+    +transform(scale(1.1) rotate($deg))
+  74%
+    +transform(scale(1) rotate(-$deg))
+  82%
+    +transform(scale(1) rotate($deg))
+  90%
+    +scale(1)
+  100%
+    +scale(0.97)
+
++keyframes(txtdance)
+  0%
+    +scale(1)
+  5%
+    +scale(1.5)
+  10%
+    +scale(1)
+  100%
+    +scale(1)
+
++keyframes(balloon)
+  0%
+    +scale(0)
+  100%
+    +scale(1)

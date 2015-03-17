@@ -1,0 +1,92 @@
+.memberList_container
+  $headerHeight: 80px
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: #fff
+  opacity: 0.5
+  +translateX(110%)
+
+  +transition-property(transform opacity)
+  +transition-duration(0.5s)
+  +transition-timing-function($easeOut)
+  +transition-delay(0s)
+
+  z-index: index($zIndex, profile)
+
+  &.show
+    opacity: 1
+    +translateX(0px)
+
+  .memberList
+    width: 100%
+    height: 100%
+    padding: $headerHeight 0 100px
+    overflow: scroll 
+    -webkit-overflow-scrolling: touch
+
+  .header
+    position: fixed 
+    width: 100%
+    height: $headerHeight
+    background: #223344
+    color: #fff
+
+    .back
+      position: absolute
+      +trbl(0, auto, 0, 20px)
+      +image-size("common/arrow.png")
+      margin: auto
+
+    .ttl
+      line-height: $headerHeight
+      text-align: center
+      font-size: 32px
+
+  .subttl
+    $height: 35px
+    height: $height 
+    line-height: $height
+    padding-left: 15px
+    font-size: 18px
+    color: #999
+    background: #f6f6f6
+    border-bottom: 1px solid #ccc
+
+  .category
+    width: 100%
+
+  .member
+    $width: 100px
+    height: $width
+
+    .icon
+      width: $width
+      height: $width
+      border-bottom: 1px solid #fff
+
+      img
+        width: 100%
+
+    .name
+      line-height: $width
+      font-size: 28px
+      font-weight: bold
+      border-bottom: 1px solid #ccc
+
+      button
+        text-align: left 
+        padding: 0 40px 0 20px
+
+    .comment
+      text-align: right
+      line-height: $width
+      color: #999
+      font-size: 16px
+      border-bottom: 1px solid #ccc
+
+      img
+        vertical-align: text-top
+
+      button
+        text-align: right
+        padding-right: 20px

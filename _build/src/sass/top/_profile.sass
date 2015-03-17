@@ -1,0 +1,83 @@
+.profile_container
+  display: none
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0.7)
+  z-index: index($zIndex, profile)
+  cursor: pointer
+
+  &.show
+    display: block
+    +animation(show 0.3s ease 0s forwards)
+
+  .profile
+    $width: 560px
+    position: absolute
+    +trbl(0, 0, 0, 0)
+    width: $width 
+    height: 780px
+    margin: auto
+    background: #fff
+    border-radius: 12px
+    overflow: hidden
+
+    .cover
+      +image-size("cover/morisuke.jpg")
+
+    .info
+      position: relative
+      padding: 35px
+      +clearfix
+
+      .icon
+        float: left
+        +image-size("icon/morisuke.jpg")
+        img
+          border-radius: 8px
+
+      .txt
+        float: left
+        width: 230px 
+        margin-left: 20px
+        +clearfix
+
+      .name
+        font-size: 32px
+        font-weight: bold
+
+      .comment
+        margin-top: 10px
+        font-size: 22px
+        color: #999
+
+    .close
+      position: absolute
+      +trbl(-20px, 0, auto, auto)
+      font-size: 48px
+      font-weight: bold
+      color: #999
+
+      button
+        padding: 20px
+
+    .social
+      +clearfix
+
+    .twitter,
+    .vine
+      float: left
+      width: $width / 2
+      height: 145px
+      text-align: center
+      border: 1px solid #ccc
+
+      a
+        display: block
+        line-height: 145px
+        opacity: 0.2
+
+        &.active
+          opacity: 1
+
+      img
+        width: 90px

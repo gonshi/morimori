@@ -1,0 +1,147 @@
+.wrapper
+  .talk
+    position: absolute
+    +trbl(0, 0, 0, 0)
+    z-index: index($zIndex, talk)
+
+  .left,
+  .right,
+  .function_container
+    position: absolute
+    padding-bottom: 120px
+
+  .left,
+  .right
+    .comment
+      max-width: 430px
+      padding: 15px 30px
+      color: #000
+      font-size: 28px
+      border-radius: 50px
+      word-break: break-all
+
+  /*--------------------
+    1秒後に既読を表示
+  /*--------------------
+  .read
+    opacity: 0
+    +animation(show 0.01s linear 1s forwards)
+
+  .right
+    right: 20px
+
+    &.error
+      .comment_container
+        margin-right: 65px
+
+        &:after
+          $img: "common/error.png"
+          position: absolute
+          +trbl(0, -65px, 0, auto)
+          +image-size($img)
+          margin: auto
+          +bg($img)
+          content: ""
+
+    .comment_container
+      position: relative
+ 
+    .comment
+      position: relative
+      background: #89E244
+
+      &:before
+        $img: "common/arrow-green.png"
+        position: absolute
+        +trbl(2px, -6px, auto, auto)
+        +image-size($img)
+        +bg($img)
+        content: ""
+
+    .info
+      position: absolute
+      +trbl(auto, auto, 5px, -70px)
+      font-size: 20px
+      color: #fff
+      text-align: right
+
+  .left
+    left: 20px
+
+    /*-------------------------------
+      stampなら吹き出しの白背景不要
+    /*-------------------------------
+    &.stamp
+      .comment
+        padding: 0
+        background: transparent
+
+        &:before
+          opacity: 0
+
+    /*-------------------------------
+      vine 埋め込み時に角丸化 
+    /*-------------------------------
+    &.vine 
+      .comment
+        width: 320px
+        height: 320px
+        padding: 0
+        border-radius: 15px
+        overflow: hidden
+
+    .icon
+      $img: "icon/morisuke.jpg"
+      $ratio: image-width($img) / 68px
+      float: left
+      +image-size($img, $ratio)
+      background: #fff
+
+    .name
+      float: left
+      margin-left: 20px
+      color: #fff
+      font-size: 24px
+
+    .comment_container
+      position: relative
+      margin: 40px 0 0 90px
+      +pie-clearfix
+
+    .comment
+      float: left
+      position: relative
+      background: #fff
+
+      &:before
+        $img: "common/arrow-white.png"
+        position: absolute
+        +trbl(2px, auto, auto, -6px)
+        +image-size($img)
+        +bg($img)
+        content: ""
+
+    .time
+      position: absolute
+      +trbl(auto, -65px, 10px, auto)
+      font-size: 20px
+      color: #fff
+      text-align: right
+
+  .function_container
+    +trbl(auto, 0, auto, 0)
+
+  .function
+    width: 480px
+    height: 55px
+    padding-top: 6px
+    margin: auto
+    text-align: center
+    color: #fff
+    font-size: 18px
+    background: rgba(0, 0, 0, 0.1)
+    border-radius: 20px
+
+    .time,
+    .comment
+      line-height: 1.1em

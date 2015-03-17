@@ -1,0 +1,160 @@
+body
+  background: #7496C4
+
+.wrapper
+  width: $viewport
+
+.header
+  $height: 80px
+  position: fixed
+  height: $height
+  +trbl(0, 0, auto, 0)
+  background: #223344
+  color: #fff
+  z-index: index($zIndex, header)
+
+  .ttl
+    line-height: $height
+    text-align: center
+    font-size: 32px
+
+  .menu
+    position: absolute
+    +trbl(0, 20px, 0, auto)
+    +image-size("common/menu.png")
+    margin: auto
+
+.secret_container
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: #111 
+  z-index: index($zIndex, secret)
+
+  .secret
+    $secretWidth: 600px
+    $passwordWidth: 400px
+    $height: 80px
+    $r: 8px
+    position: absolute
+    +trbl(0, 0, 0, 0)
+    width: $secretWidth 
+    height: $height
+    margin: auto
+    background: transparent 
+    +clearfix
+
+    .intro
+      color: #FFF
+
+    .password,
+    .enter
+      float: left
+      color: #FFF
+
+    .password
+      width: $passwordWidth 
+      height: $height
+      padding-left: 10px
+      color: #CCC
+      font-size: 24px
+      border-radius: $r 
+
+    .enter
+      $margin: 10px
+      width: $secretWidth - $passwordWidth - $margin - 20px 
+      line-height: $height
+      margin-left: $margin / 2 
+      font-size: 32px
+      background: #666
+      border-radius: $r 
+
+.filter
+  display: none 
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0.7)
+  z-index: index($zIndex, profile)
+
+  &.show
+    display: block
+    +animation(show 0.2s ease 0s forwards)
+
+.zoomPicture_container
+  display: none
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0.7)
+  z-index: index($zIndex, profile)
+
+  &.show
+    display: block
+    +animation(show 0.3s ease 0s forwards)
+
+  .zoomPicture
+    position: absolute
+    +trbl(0, 0, 0, 0)
+    +image-size("picture/1.jpg")
+    margin: auto
+
+    &:before
+      position: absolute
+      +trbl(-100px, 0, auto, auto)
+      color: #fff
+      font-size: 64px
+      content: "✕"
+
+    img
+      border-radius: 12px
+
+.loading_container
+  display: none
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0.8)
+  z-index: index($zIndex, profile)
+
+  .loading-img
+    position: absolute
+    +trbl(0, 0, 0, 0)
+    +image-size("stamp/40.png")
+    margin: auto
+    +animation(imgdance 2s linear 0s infinite)
+
+  .loading-txt
+    $width: 50px
+    position: absolute
+    top: 50%
+    left: 50%
+    width: $width 
+    height: $width 
+    margin-top: 160px
+    background-image: image-url("common/loading.png")
+    background-repeat: no-repeat
+
+    $marginLeft: -205px, -167px, -110px, -59px, -19px, 26px, 73px, 120px, 160px 
+    @for $i from 0 to 9
+      &.num#{$i}
+        background-position: 0 -1 * $width * $i
+        margin-left: nth($marginLeft, $i + 1)
+        +animation(txtdance 2s linear 0.08s * $i infinite)
+
+.tutorial_container
+  display: none
+  position: fixed
+  +trbl(0, 0, 0, 0)
+  background: rgba(0, 0, 0, 0.7)
+  z-index: index($zIndex, profile)
+
+  &.show
+    display: block
+    +animation(show 0.3s ease 0s)
+
+    .tutorial
+      +animation(balloon 0.3s $easeOutBack 0.1s forwards)
+
+  .tutorial
+    position: absolute
+    +trbl(auto, 50px, 60px, auto)
+    +image-size("common/tutorial.png")
+    +transform-origin(right, bottom)
+    +scale(0)
