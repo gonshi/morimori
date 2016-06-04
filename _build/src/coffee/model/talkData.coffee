@@ -5,7 +5,7 @@ instance = null
 class TalkData
   constructor: ->
     @src = "https://spreadsheets.google.com/feeds/list/" +
-           "1MCgqb_s3apyrD5ShriOMRNZ8UJsBMLGmcqdMKFrvcKI/" +
+           "1pXS5-iji6TwoCwY9r5prwb0-UE7Lz5IpY3v3nCfIElw/" +
            "od6/public/basic?alt=json-in-script"
 
            
